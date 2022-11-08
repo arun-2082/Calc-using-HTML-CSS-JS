@@ -1,0 +1,174 @@
+<html>
+    <head>
+        <title>
+            My Calc ©Arun
+        </title>
+        <link rel="icon" href="/home/arun_2082/Downloads/arun.jpeg" type = "image/x-icon">
+        
+        
+        <style>
+            
+             .title {
+            margin-bottom: 10px;
+            padding: 5px 0;
+            font-size: 20px;
+            font-weight:bold;
+            text-align:center;
+            width: 406px;
+            color:rgb(0, 0, 0);
+            border: solid rgb(235, 138, 11) 2px;
+            
+        }
+            
+            #main{width : 400px; height: 480px; background-color: rgb(0, 0, 0);margin = 10px; text-align: center;border-style:solid;border-color:orangered;border-width: 5;border-radius: 3%;text-align: center;}
+            input{width:20%; height : 50px;font-size:23px; margin:5px;}
+            #tb{width:68%;height:60px;background-color:silver;}
+            #b1{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b2{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b3{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b4{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b5{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b6{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b7{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b8{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b9{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #b0{background-color:rgb(85, 85, 114);border-radius: 20%;}
+            #bp{background-color: cornflowerblue;border-radius: 20%;}
+            #bs{background-color: lightcoral;border-radius: 20%;}
+            #bd{background-color: rgb(235, 138, 11);border-radius: 20%;}
+            #bx{background-color: brown;border-radius: 20%;}
+            #be{background-color: rgb(14, 245, 14);width: 44%;}
+            #bc{background-color: red; border-radius: 99%;}
+            #bksp{background-color: rgb(228, 12, 235);border-radius: 20%;}
+            #mo{background-color: khaki;border-radius: 20%;}
+            #bsq{background-color: dodgerblue;border-radius: 20%;}
+            #dot{background-color: khaki;border-radius: 20%;}
+            #ob{background-color: rgb(85, 85, 114);border-radius: 20%;width : 35px; height: 50px; }
+            
+            #cb{background-color: rgb(85, 85, 114);border-radius: 20%;width : 35px; height: 50px; }
+        </style>
+
+    </head>
+    <body>
+        <div class = title >
+         BASIC CALCULATOR 
+        </div>
+        
+        <div id = "main" >
+            <form name = "f">
+                <br>
+                <input type="text" name ="tbox" placeholder="0" id = 'tb'>
+                <input id = "bksp" type = "button" value = &#8592; onclick="deleteChar()">
+                <br><br>
+                <p style="color: white;">______________________________________________</p>
+                <input id = "bc" type="button" value = "AC" onclick="f.tbox.value=''">
+               
+               
+                
+                <input id = "ob" type = "button" value = "("  onclick = "f.tbox.value += '('"  >
+                <input id = "cb" type = "button" value = ")"  onclick = "f.tbox.value +=')'" >
+                <input id = "mo" type = "button" value = "%" onclick = "mod()" > 
+                <input id = "bd" type = "button" value = "/" onclick= "div()" >
+                <br>
+                <input id = "b7" type="button" value = "7" onclick="f.tbox.value+=7">
+                <input id = "b8" type="button" value = "8" onclick="f.tbox.value+=8">
+                <input id = "b9" type="button" value = "9" onclick="f.tbox.value+=9">
+                <input id = "bx" type="button" value = "*" onclick="mul()">
+                <br>
+                <input id = "b4" type="button" value = "4" onclick="f.tbox.value+=4">
+                <input id = "b5" type="button" value = "5" onclick="f.tbox.value+=5">
+                <input id = "b6" type="button" value = "6" onclick="f.tbox.value+=6">
+                <input id = "bs" type="button" value = "-" onclick="sub()">
+                <br>
+                <input id = "b1" type="button" value = "1" onclick="f.tbox.value+=1">
+                <input id = "b2" type="button" value = "2" onclick="f.tbox.value+=2">
+                <input id = "b3" type="button" value = "3" onclick="f.tbox.value+=3">
+                <input id = "bp" type="button" value = "+" onclick="add()">
+                <br>
+                <input id = "b0" type="button" value = "0" onclick="f.tbox.value+='0'">
+                <input id ="dot" type = "button" value="." onclick = "f.tbox.value+='.'">
+                <input id = "be" type="button" value = "=" onclick="f.tbox.value=eval(f.tbox.value)">
+                
+                <br><br>
+            </form>
+        </div><br>
+        <div class = title>
+            DESIGNED BY ARUN©
+    </div>
+        <script>
+            function add(){
+                var p =0, i=0;
+                p = f.tbox.value;
+                i = p.charAt(p.length-1);
+                if(i=='+' || i=='-' || i == '/' || i == '*' || i == '%'){
+                    f.tbox.value=p.substring(0,p.length-1);
+                    f.tbox.value += '+';
+                }
+                else{
+                    f.tbox.value += '+';
+                }
+            }
+            function sub(){
+                var p =0, i=0;
+                p = f.tbox.value;
+                i = p.charAt(p.length-1);
+                if(i=='+' || i=='-' || i == '/' || i == '*' || i == '%'){
+                    f.tbox.value=p.substring(0,p.length-1);
+                    f.tbox.value += '-';
+                }
+                else{
+                    f.tbox.value += '-';
+                }
+            }
+            function div(){
+                var p =0.0, i=0;
+                p = f.tbox.value;
+                i = p.charAt(p.length-1);
+                if(i=='+' || i=='-' || i == '/' || i == '*' || i=='%'){
+                    f.tbox.value=p.substring(0,p.length-1);
+                    f.tbox.value += '/';
+                }
+                else{
+                    f.tbox.value += '/';
+                }
+            }
+            function mul(){
+                var p =0, i=0;
+                p = f.tbox.value;
+                i = p.charAt(p.length-1);
+                if(i=='+' || i=='-' || i == '/' || i == '*' || i=='%'){
+                    f.tbox.value=p.substring(0,p.length-1);
+                    f.tbox.value += '*';
+                }
+                else{
+                    f.tbox.value += '*';
+                }
+            }
+            function mod(){
+                var p =0, i=0;
+                p = f.tbox.value;
+                i = p.charAt(p.length-1);
+                if(i=='+' || i=='-' || i == '/' || i == '*' || i == '%'){
+                    f.tbox.value=p.substring(0,p.length-1);
+                    f.tbox.value += '%';
+                }
+                else{
+                    f.tbox.value += '%';
+                }
+            }
+            function deleteChar(){
+                var p = 0;
+                p = f.tbox.value;
+                f.tbox.value=p.substring(0,p.length-1);
+
+            }
+            function sqrt(){
+                var p=f.tbox.value;
+                f.tbox.value += p.Math.sqrt(substring(0,p.length));
+            }
+            
+
+        </script>
+        
+    </body>
+</html>
